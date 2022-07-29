@@ -12,13 +12,11 @@ namespace AboutBimstarter
 {
     public partial class AboutForm : Form
     {
-        public AboutForm()
+        public AboutForm(int version)
         {
             InitializeComponent();
-        }
 
-        private void AboutForm_Load(object sender, EventArgs e)
-        {
+            labelVersion.Text = version.ToString();
         }
 
         private void buttonOk_Click(object sender, EventArgs e)

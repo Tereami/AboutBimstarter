@@ -31,7 +31,6 @@ namespace AboutBimstarter
             try { application.CreateRibbonTab(tabName); }
             catch { }
 
-
             //Панель "About"
             RibbonPanel panelAbout = application.CreateRibbonPanel(tabName, "BIM-STARTER");
             PushButton btnAbout = panelAbout.AddItem(new PushButtonData(
