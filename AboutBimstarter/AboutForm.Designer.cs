@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AboutForm));
             this.label1 = new System.Windows.Forms.Label();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.buttonOk = new System.Windows.Forms.Button();
@@ -39,82 +40,50 @@
             // 
             // label1
             // 
-            this.label1.Location = new System.Drawing.Point(12, 61);
-            this.label1.MaximumSize = new System.Drawing.Size(1000, 500);
+            resources.ApplyResources(this.label1, "label1");
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(270, 44);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "BIM-STARTER - комплект инструментов для эффективной работы в Autodesk Revit.";
             // 
             // linkLabel1
             // 
-            this.linkLabel1.AutoSize = true;
-            this.linkLabel1.Location = new System.Drawing.Point(12, 100);
+            resources.ApplyResources(this.linkLabel1, "linkLabel1");
             this.linkLabel1.Name = "linkLabel1";
-            this.linkLabel1.Size = new System.Drawing.Size(78, 13);
-            this.linkLabel1.TabIndex = 1;
             this.linkLabel1.TabStop = true;
-            this.linkLabel1.Text = "bim-starter.com";
             this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
             // 
             // buttonOk
             // 
-            this.buttonOk.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonOk.Location = new System.Drawing.Point(207, 166);
+            resources.ApplyResources(this.buttonOk, "buttonOk");
             this.buttonOk.Name = "buttonOk";
-            this.buttonOk.Size = new System.Drawing.Size(75, 23);
-            this.buttonOk.TabIndex = 3;
-            this.buttonOk.Text = "OK";
             this.buttonOk.UseVisualStyleBackColor = true;
             this.buttonOk.Click += new System.EventHandler(this.buttonOk_Click);
             // 
             // linkLabel2
             // 
-            this.linkLabel2.AutoSize = true;
-            this.linkLabel2.Location = new System.Drawing.Point(115, 100);
+            resources.ApplyResources(this.linkLabel2, "linkLabel2");
             this.linkLabel2.Name = "linkLabel2";
-            this.linkLabel2.Size = new System.Drawing.Size(110, 13);
-            this.linkLabel2.TabIndex = 1;
             this.linkLabel2.TabStop = true;
-            this.linkLabel2.Text = "bimstarter@gmail.com";
             this.linkLabel2.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel2_LinkClicked);
             // 
             // label2
             // 
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            resources.ApplyResources(this.label2, "label2");
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.label2.Location = new System.Drawing.Point(15, 9);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(262, 31);
-            this.label2.TabIndex = 4;
-            this.label2.Text = "BIM-STARTER";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label3
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(12, 129);
-            this.label3.MaximumSize = new System.Drawing.Size(1000, 500);
+            resources.ApplyResources(this.label3, "label3");
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(178, 13);
-            this.label3.TabIndex = 0;
-            this.label3.Text = "Установленная версия плагинов:";
             // 
             // labelVersion
             // 
-            this.labelVersion.AutoSize = true;
-            this.labelVersion.Location = new System.Drawing.Point(212, 129);
-            this.labelVersion.MaximumSize = new System.Drawing.Size(1000, 500);
+            resources.ApplyResources(this.labelVersion, "labelVersion");
             this.labelVersion.Name = "labelVersion";
-            this.labelVersion.Size = new System.Drawing.Size(25, 13);
-            this.labelVersion.TabIndex = 0;
-            this.labelVersion.Text = "000";
             // 
             // AboutForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(289, 201);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.buttonOk);
             this.Controls.Add(this.linkLabel2);
@@ -124,8 +93,6 @@
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "AboutForm";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "О проекте";
             this.ResumeLayout(false);
             this.PerformLayout();
 
