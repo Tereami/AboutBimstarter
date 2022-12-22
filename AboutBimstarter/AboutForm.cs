@@ -16,7 +16,10 @@ namespace AboutBimstarter
         {
             InitializeComponent();
 
-            labelVersion.Text = version.ToString();
+            if (version > 0)
+                labelVersion.Text = version.ToString();
+            else
+                labelVersion.Text = "NULL";
         }
 
         private void buttonOk_Click(object sender, EventArgs e)
@@ -27,13 +30,13 @@ namespace AboutBimstarter
         private void linkLabel2_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             System.Diagnostics.Process procMail = new System.Diagnostics.Process();
-            procMail.StartInfo.FileName = "mailto:bimstarter@gmail.com?subject=Вопрос_по_Bim-Starter";
+            procMail.StartInfo.FileName = "mailto:info@bim-starter.com?subject=Вопрос_по_Bim-Starter";
             procMail.Start();
         }
 
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            System.Diagnostics.Process.Start("http://bim-starter.com");
+            System.Diagnostics.Process.Start("https://bim-starter.com");
         }
     }
 }
