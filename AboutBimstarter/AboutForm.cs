@@ -1,9 +1,11 @@
-﻿using System;
+﻿using Autodesk.Revit.UI;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -12,10 +14,10 @@ namespace AboutBimstarter
 {
     public partial class AboutForm : Form
     {
-        public Settings newSets;
+        public SslConfig newSets;
 
 
-        public AboutForm(int version, Settings sets)
+        public AboutForm(int version, SslConfig sets)
         {
             InitializeComponent();
 
@@ -40,6 +42,8 @@ namespace AboutBimstarter
                     break;
             }
 
+            string currentCert = ServicePointManager.SecurityProtocol.ToString();
+            labelCurrentCertificate.Text = currentCert;
         }
 
         private void linkLabel2_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
@@ -65,7 +69,10 @@ namespace AboutBimstarter
             else if (radioButtonTLS12.Checked == true)
                 newSets.tlsVersion = TlsVersion.Tls12;
             else
+            {
+                TaskDialog.Show("Info", "Restart Revit to apply this settings");
                 newSets.tlsVersion = TlsVersion.Default;
+            }
 
             this.DialogResult = DialogResult.OK;
             this.Close();

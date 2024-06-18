@@ -37,6 +37,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.labelVersion = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.labelCurrentCertificate = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.radioButtonTLS12 = new System.Windows.Forms.RadioButton();
             this.radioButtonTLS11 = new System.Windows.Forms.RadioButton();
@@ -91,6 +92,7 @@
             // groupBox1
             // 
             resources.ApplyResources(this.groupBox1, "groupBox1");
+            this.groupBox1.Controls.Add(this.labelCurrentCertificate);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.radioButtonTLS12);
             this.groupBox1.Controls.Add(this.radioButtonTLS11);
@@ -98,6 +100,11 @@
             this.groupBox1.Controls.Add(this.radioButtonDefault);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.TabStop = false;
+            // 
+            // labelCurrentCertificate
+            // 
+            resources.ApplyResources(this.labelCurrentCertificate, "labelCurrentCertificate");
+            this.labelCurrentCertificate.Name = "labelCurrentCertificate";
             // 
             // label4
             // 
@@ -174,9 +181,10 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.RadioButton radioButtonTLS1;
         private System.Windows.Forms.RadioButton radioButtonDefault;
-        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.RadioButton radioButtonTLS12;
         private System.Windows.Forms.RadioButton radioButtonTLS11;
         private System.Windows.Forms.Button Cancel;
+        private System.Windows.Forms.Label labelCurrentCertificate;
+        private System.Windows.Forms.Label label4;
     }
 }

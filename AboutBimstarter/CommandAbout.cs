@@ -6,6 +6,8 @@ using System.Threading.Tasks;
 using Autodesk.Revit.UI;
 using Autodesk.Revit.DB;
 using System.IO;
+using System.Diagnostics;
+using System.Net;
 
 
 namespace AboutBimstarter
@@ -35,7 +37,7 @@ namespace AboutBimstarter
                 }
             }
 
-            Settings sets = Settings.Load();
+            SslConfig sets = SslConfig.Load();
 
             AboutBimstarter.AboutForm form = new AboutBimstarter.AboutForm(installedVersion, sets);
 
@@ -43,6 +45,29 @@ namespace AboutBimstarter
             {
                 sets = form.newSets;
                 if (sets == null) throw new Exception("Invalid settings");
+
+
+                if (sets.tlsVersion == TlsVersion.Default)
+                {
+                    Debug.WriteLine("Certificate is not changed, use default");
+                }
+                else if (sets.tlsVersion == TlsVersion.Tls1)
+                {
+                    Debug.WriteLine("Set tls1");
+                    ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls;
+                }
+                else if (sets.tlsVersion == TlsVersion.Tls11)
+                {
+                    Debug.WriteLine("Set tls11");
+                    ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls11;
+                }
+                else if (sets.tlsVersion == TlsVersion.Tls12)
+                {
+                    Debug.WriteLine("Set tls12");
+                    ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12;
+                }
+
+                Debug.WriteLine($"Current certificate: {ServicePointManager.SecurityProtocol}");
 
                 sets.Save();
             }

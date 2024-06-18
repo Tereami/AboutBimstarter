@@ -11,19 +11,19 @@ namespace AboutBimstarter
     public enum TlsVersion { Default, Tls1, Tls11, Tls12 };
 
     [Serializable]
-    public class Settings
+    public class SslConfig
     {
         private static string configPath;
 
 
         public TlsVersion tlsVersion = TlsVersion.Default;
 
-        public Settings()
+        public SslConfig()
         {
         }
 
 
-        public static Settings Load()
+        public static SslConfig Load()
         {
             string appdataPath = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
             string rbspath = Path.Combine(appdataPath, "bim-starter");
@@ -33,8 +33,8 @@ namespace AboutBimstarter
             if (!Directory.Exists(localFolder)) Directory.CreateDirectory(localFolder);
             configPath = Path.Combine(localFolder, "config.xml");
 
-            XmlSerializer serializer = new XmlSerializer(typeof(Settings));
-            Settings cfg = null;
+            XmlSerializer serializer = new XmlSerializer(typeof(SslConfig));
+            SslConfig cfg = null;
             bool checkCfgFile = File.Exists(configPath);
             if (checkCfgFile)
             {
@@ -42,11 +42,11 @@ namespace AboutBimstarter
                 {
                     try
                     {
-                        cfg = (Settings)serializer.Deserialize(reader);
+                        cfg = (SslConfig)serializer.Deserialize(reader);
                     }
                     catch
                     {
-                        cfg = new Settings();
+                        cfg = new SslConfig();
                     }
                     if (cfg == null)
                     {
@@ -56,7 +56,7 @@ namespace AboutBimstarter
             }
             else
             {
-                cfg = new Settings();
+                cfg = new SslConfig();
             }
 
             return cfg;
@@ -64,7 +64,7 @@ namespace AboutBimstarter
 
         public void Save()
         {
-            XmlSerializer serializer = new XmlSerializer(typeof(Settings));
+            XmlSerializer serializer = new XmlSerializer(typeof(SslConfig));
             if (File.Exists(configPath)) File.Delete(configPath);
             using (FileStream writer = new FileStream(configPath, FileMode.OpenOrCreate))
             {
