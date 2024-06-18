@@ -37,11 +37,11 @@
             this.label3 = new System.Windows.Forms.Label();
             this.labelVersion = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.radioButtonDefault = new System.Windows.Forms.RadioButton();
-            this.radioButtonTLS1 = new System.Windows.Forms.RadioButton();
-            this.radioButtonTLS11 = new System.Windows.Forms.RadioButton();
-            this.radioButtonTLS12 = new System.Windows.Forms.RadioButton();
             this.label4 = new System.Windows.Forms.Label();
+            this.radioButtonTLS12 = new System.Windows.Forms.RadioButton();
+            this.radioButtonTLS11 = new System.Windows.Forms.RadioButton();
+            this.radioButtonTLS1 = new System.Windows.Forms.RadioButton();
+            this.radioButtonDefault = new System.Windows.Forms.RadioButton();
             this.Cancel = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -90,14 +90,37 @@
             // 
             // groupBox1
             // 
+            resources.ApplyResources(this.groupBox1, "groupBox1");
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.radioButtonTLS12);
             this.groupBox1.Controls.Add(this.radioButtonTLS11);
             this.groupBox1.Controls.Add(this.radioButtonTLS1);
             this.groupBox1.Controls.Add(this.radioButtonDefault);
-            resources.ApplyResources(this.groupBox1, "groupBox1");
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.TabStop = false;
+            // 
+            // label4
+            // 
+            resources.ApplyResources(this.label4, "label4");
+            this.label4.Name = "label4";
+            // 
+            // radioButtonTLS12
+            // 
+            resources.ApplyResources(this.radioButtonTLS12, "radioButtonTLS12");
+            this.radioButtonTLS12.Name = "radioButtonTLS12";
+            this.radioButtonTLS12.UseVisualStyleBackColor = true;
+            // 
+            // radioButtonTLS11
+            // 
+            resources.ApplyResources(this.radioButtonTLS11, "radioButtonTLS11");
+            this.radioButtonTLS11.Name = "radioButtonTLS11";
+            this.radioButtonTLS11.UseVisualStyleBackColor = true;
+            // 
+            // radioButtonTLS1
+            // 
+            resources.ApplyResources(this.radioButtonTLS1, "radioButtonTLS1");
+            this.radioButtonTLS1.Name = "radioButtonTLS1";
+            this.radioButtonTLS1.UseVisualStyleBackColor = true;
             // 
             // radioButtonDefault
             // 
@@ -106,29 +129,6 @@
             this.radioButtonDefault.Name = "radioButtonDefault";
             this.radioButtonDefault.TabStop = true;
             this.radioButtonDefault.UseVisualStyleBackColor = true;
-            // 
-            // radioButtonTLS1
-            // 
-            resources.ApplyResources(this.radioButtonTLS1, "radioButtonTLS1");
-            this.radioButtonTLS1.Name = "radioButtonTLS1";
-            this.radioButtonTLS1.UseVisualStyleBackColor = true;
-            // 
-            // radioButtonTLS11
-            // 
-            resources.ApplyResources(this.radioButtonTLS11, "radioButtonTLS11");
-            this.radioButtonTLS11.Name = "radioButtonTLS11";
-            this.radioButtonTLS11.UseVisualStyleBackColor = true;
-            // 
-            // radioButtonTLS12
-            // 
-            resources.ApplyResources(this.radioButtonTLS12, "radioButtonTLS12");
-            this.radioButtonTLS12.Name = "radioButtonTLS12";
-            this.radioButtonTLS12.UseVisualStyleBackColor = true;
-            // 
-            // label4
-            // 
-            resources.ApplyResources(this.label4, "label4");
-            this.label4.Name = "label4";
             // 
             // Cancel
             // 
