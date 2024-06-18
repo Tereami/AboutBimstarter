@@ -35,12 +35,19 @@ namespace AboutBimstarter
                 }
             }
 
-            AboutBimstarter.AboutForm form = new AboutBimstarter.AboutForm(installedVersion);
+            Settings sets = Settings.Load();
 
-            form.ShowDialog();
+            AboutBimstarter.AboutForm form = new AboutBimstarter.AboutForm(installedVersion, sets);
+
+            if (form.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+            {
+                sets = form.newSets;
+                if (sets == null) throw new Exception("Invalid settings");
+
+                sets.Save();
+            }
 
             return Result.Succeeded;
-
         }
     }
 }

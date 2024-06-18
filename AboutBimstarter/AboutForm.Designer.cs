@@ -36,6 +36,14 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.labelVersion = new System.Windows.Forms.Label();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.radioButtonDefault = new System.Windows.Forms.RadioButton();
+            this.radioButtonTLS1 = new System.Windows.Forms.RadioButton();
+            this.radioButtonTLS11 = new System.Windows.Forms.RadioButton();
+            this.radioButtonTLS12 = new System.Windows.Forms.RadioButton();
+            this.label4 = new System.Windows.Forms.Label();
+            this.Cancel = new System.Windows.Forms.Button();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -80,11 +88,65 @@
             resources.ApplyResources(this.labelVersion, "labelVersion");
             this.labelVersion.Name = "labelVersion";
             // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.label4);
+            this.groupBox1.Controls.Add(this.radioButtonTLS12);
+            this.groupBox1.Controls.Add(this.radioButtonTLS11);
+            this.groupBox1.Controls.Add(this.radioButtonTLS1);
+            this.groupBox1.Controls.Add(this.radioButtonDefault);
+            resources.ApplyResources(this.groupBox1, "groupBox1");
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.TabStop = false;
+            // 
+            // radioButtonDefault
+            // 
+            resources.ApplyResources(this.radioButtonDefault, "radioButtonDefault");
+            this.radioButtonDefault.Checked = true;
+            this.radioButtonDefault.Name = "radioButtonDefault";
+            this.radioButtonDefault.TabStop = true;
+            this.radioButtonDefault.UseVisualStyleBackColor = true;
+            // 
+            // radioButtonTLS1
+            // 
+            resources.ApplyResources(this.radioButtonTLS1, "radioButtonTLS1");
+            this.radioButtonTLS1.Name = "radioButtonTLS1";
+            this.radioButtonTLS1.UseVisualStyleBackColor = true;
+            // 
+            // radioButtonTLS11
+            // 
+            resources.ApplyResources(this.radioButtonTLS11, "radioButtonTLS11");
+            this.radioButtonTLS11.Name = "radioButtonTLS11";
+            this.radioButtonTLS11.UseVisualStyleBackColor = true;
+            // 
+            // radioButtonTLS12
+            // 
+            resources.ApplyResources(this.radioButtonTLS12, "radioButtonTLS12");
+            this.radioButtonTLS12.Name = "radioButtonTLS12";
+            this.radioButtonTLS12.UseVisualStyleBackColor = true;
+            // 
+            // label4
+            // 
+            resources.ApplyResources(this.label4, "label4");
+            this.label4.Name = "label4";
+            // 
+            // Cancel
+            // 
+            resources.ApplyResources(this.Cancel, "Cancel");
+            this.Cancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.Cancel.Name = "Cancel";
+            this.Cancel.UseVisualStyleBackColor = true;
+            this.Cancel.Click += new System.EventHandler(this.Cancel_Click);
+            // 
             // AboutForm
             // 
+            this.AcceptButton = this.buttonOk;
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.CancelButton = this.Cancel;
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label2);
+            this.Controls.Add(this.Cancel);
             this.Controls.Add(this.buttonOk);
             this.Controls.Add(this.linkLabel2);
             this.Controls.Add(this.linkLabel1);
@@ -93,6 +155,8 @@
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "AboutForm";
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -107,5 +171,12 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label labelVersion;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.RadioButton radioButtonTLS1;
+        private System.Windows.Forms.RadioButton radioButtonDefault;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.RadioButton radioButtonTLS12;
+        private System.Windows.Forms.RadioButton radioButtonTLS11;
+        private System.Windows.Forms.Button Cancel;
     }
 }
