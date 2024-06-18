@@ -70,7 +70,10 @@ namespace AboutBimstarter
                 newSets.tlsVersion = TlsVersion.Tls12;
             else
             {
-                TaskDialog.Show("Info", "Restart Revit to apply this settings");
+                if (newSets.tlsVersion != TlsVersion.Default)
+                {
+                    TaskDialog.Show("Info", "Перезапустите Ревит для применения этой настройки");
+                }
                 newSets.tlsVersion = TlsVersion.Default;
             }
 
